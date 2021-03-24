@@ -1,19 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header>
     <ion-toolbar>
-        <ion-title>
-            Tab 3
-        </ion-title>
+        <ion-title>twitter</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Tab 3</ion-title>
-        </ion-toolbar>
-    </ion-header>
+<ion-content>
 
-    <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <ion-item lines="full">
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name" type="text"></ion-input>
+        </ion-item>
+
+
+        <ion-item lines="full">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+
+
+
+
+        <ion-item lines="full">
+            <ion-label position="floating">Phone</ion-label>
+            <ion-input maxlength="10" formControlName="phone" type="text" required></ion-input>
+        </ion-item>
+
+
+        <ion-row>
+            <ion-col>
+                <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
+
+
 
 
     <ion-fab horizontal="end" vertical="bottom" slot="fixed">
@@ -44,6 +67,5 @@
             </ion-fab-button>
         </ion-fab-list>
     </ion-fab>
-
 
 </ion-content>
